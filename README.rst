@@ -1,6 +1,6 @@
-=======
-archiso
-=======
+=========================
+R-Linos made with archiso
+=========================
 
 The archiso project features scripts and configuration templates to build installation media (*.iso* images and
 *.tar bootstrap images) as well as netboot artifacts for BIOS and UEFI based systems.

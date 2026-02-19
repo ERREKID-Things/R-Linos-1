@@ -1,3 +1,12 @@
+mesa
+xf86
+xorg-server
+konsole
+plasma-meta
+sddm
+network-manager-applet
+plasma-nm
+dolphin
 alsa-utils
 amd-ucode
 arch-install-scripts

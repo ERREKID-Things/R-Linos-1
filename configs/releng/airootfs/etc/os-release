@@ -1,0 +1,7 @@
+NAME="R-Linos"
+PRETTY_NAME="R-Linos Linux"
+ID=rlinos
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;0;102;204"
+HOME_URL="https://github.com/tu-usuario/R-Linos-1"

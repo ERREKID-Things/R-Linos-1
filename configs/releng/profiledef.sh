@@ -8,7 +8,7 @@ iso_name="r-linos-1"
 iso_label="R_LINOS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 
 # Quién manda aquí: Tú primero, luego la base
-iso_publisher="Romeo (ERREKID) <https://github.com/tu-usuario>"
+iso_publisher="ERREKID <https://github.com/ERREKID-Things>"
 
 # Nombre de la aplicación al bootear
 iso_application="R-Linos KDE Plasma Edition"
@@ -35,4 +35,5 @@ file_permissions=(
   ["/usr/local/bin/choose-mirror"]="0:0:755"
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
+  ["/etc/systemd/system/display-manager.service"]="0:0:644"
 )

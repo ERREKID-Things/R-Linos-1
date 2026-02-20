@@ -1,0 +1,23 @@
+name: Build R-Linos ISO
+on:
+  workflow_dispatch: # Esto permite darle a un botón para empezar
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build ISO using Archiso
+        uses: arch-linux-gui/archiso-action@v2
+        with:
+          iso_name: R-Linos-1
+          gen_bit_name: true
+          custom_config: configs/releng
+
+      - name: Upload ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: R-Linos-1-ISO
+          path: ./*.iso

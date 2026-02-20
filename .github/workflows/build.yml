@@ -1,23 +1,30 @@
 name: Build R-Linos ISO
 on:
-  workflow_dispatch: # Esto permite darle a un botón para empezar
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --privileged
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build ISO using Archiso
-        uses: arch-linux-gui/archiso-action@v2
-        with:
-          iso_name: R-Linos-1
-          gen_bit_name: true
-          custom_config: configs/releng
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm archiso awk
+
+      - name: Build ISO
+        run: |
+          # Creamos la carpeta de salida
+          mkdir -p out
+          # Ejecutamos mkarchiso apuntando a tu config
+          mkarchiso -v -w /tmp/archiso-tmp -o ./out ./configs/releng
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4
         with:
           name: R-Linos-1-ISO
-          path: ./*.iso
+          path: out/*.iso

@@ -1,6 +1,8 @@
 kdeconnect
 mesa
-xf86
+xf86-video-vesa
+xf86-video-fbdev
+xf86-input-libinput
 xorg-server
 konsole
 plasma-meta
